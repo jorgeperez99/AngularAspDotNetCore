@@ -6,6 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+../.vs/
+.vs/
 ../.vs/*.*
 .vs/*.*
 
