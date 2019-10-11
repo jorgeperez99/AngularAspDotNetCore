@@ -7,6 +7,7 @@ import { AppComponent } from './Components/app/app.component';
 import { RoutingComponent } from './Components/routing/routing.component';
 import { EFComponent } from './Components/ef/ef.component';
 import { TestingComponent } from './Components/testing/testing.component';
+import { ConfigurationComponent } from './Components/configuration/configuration.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { TestingComponent } from './Components/testing/testing.component';
     AppComponent,
     RoutingComponent,
     EFComponent,
-    TestingComponent
+    TestingComponent,
+    ConfigurationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,6 +26,7 @@ import { TestingComponent } from './Components/testing/testing.component';
       { path: '', redirectTo: '/routing', pathMatch: 'full' },
       { path: 'routing', component: RoutingComponent },
       { path: 'ef', component: EFComponent },
+      { path: 'configuration', component: ConfigurationComponent },
       { path: 'testing', component: TestingComponent }
     ])
   ],

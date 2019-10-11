@@ -14,6 +14,10 @@ namespace AngularAspDotNetCore.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        /// <summary>
+        /// This is working with https://localhost:44300/api/SampleData
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
