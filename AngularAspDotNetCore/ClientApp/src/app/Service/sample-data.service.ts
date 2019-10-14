@@ -1,20 +1,28 @@
 import { Injectable } from '@angular/core';
 import { SampleData } from '../Model/sample-data';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
+import { PlatformLocation } from '@angular/common';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class SampleDataService {
-  apiURL: string = 'http://localhost:8010/angularexample-dda6c/us-central1/webApi/api/v1';
+  apiURL: string;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private platformLocation: PlatformLocation) {
+    this.apiURL = (this.platformLocation as any).location.origin + '/api';
+    console.log((this.platformLocation as any).location);
+    console.log((this.platformLocation as any).location.href);
+    console.log((this.platformLocation as any).location.origin);
+  }
 
   getPhones() {
-    return this.httpClient.get<SampleData[]>(`${this.apiURL}/phones`);
+    return this.httpClient.get<SampleData[]>(`${this.apiURL}/SampleData`);
   }
 
   getPhone() {
-    return this.httpClient.get<SampleData[]>(`${this.apiURL}/phone`);
+    return this.httpClient.get<SampleData[]>(`${this.apiURL}/SampleData`);
   }
 }
