@@ -14,11 +14,8 @@ export class HttpClientComponent implements OnInit {
   }
 
   getData() {
-      debugger;
-    this.sampleDataService.getPhones().subscribe(data => {
-      debugger;
+    this.sampleDataService.getSampleData().subscribe(data => {
       console.debug(data);
     });  
   }
-
 }

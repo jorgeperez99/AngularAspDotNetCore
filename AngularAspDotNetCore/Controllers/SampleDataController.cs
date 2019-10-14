@@ -21,8 +21,10 @@ namespace AngularAspDotNetCore.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
-            var test = Request.Headers["test"];
-            System.Diagnostics.Debug.WriteLine("header: " + test);
+            var header1 = Request.Headers["header1"];
+            var header2 = Request.Headers["header2"];
+            System.Diagnostics.Debug.WriteLine("header1: " + header1);
+            System.Diagnostics.Debug.WriteLine("header2: " + header2);
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

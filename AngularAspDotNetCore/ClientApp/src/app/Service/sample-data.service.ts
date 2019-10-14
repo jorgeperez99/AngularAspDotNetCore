@@ -18,11 +18,9 @@ export class SampleDataService {
     console.log((this.platformLocation as any).location.origin);
   }
 
-  getPhones() {
-    return this.httpClient.get<SampleData[]>(`${this.apiURL}/SampleData`);
-  }
-
-  getPhone() {
-    return this.httpClient.get<SampleData[]>(`${this.apiURL}/SampleData`);
+  getSampleData() {
+    return this.httpClient.get<SampleData[]>(`${this.apiURL}/SampleData`, {
+      headers: { 'header1': 'value1', 'header2': 'value2' }
+    });
   }
 }
