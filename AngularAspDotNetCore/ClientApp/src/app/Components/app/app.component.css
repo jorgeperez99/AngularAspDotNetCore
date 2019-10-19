@@ -18,3 +18,17 @@
   width: 100%;
   height: 100%;
 }
+
+
+.menuItem {
+  border-top-style: none;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.menu {
+  overflow-y: none;
+  height: 100%;
+  padding: 0px;
+}

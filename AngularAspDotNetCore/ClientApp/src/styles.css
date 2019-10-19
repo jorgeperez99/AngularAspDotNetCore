@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+.example {
+  font-family: Consolas;
+  font-size: 10px;
+  background-color: lightgray;
+  border-color: darkgray;
+}
+
+li {
+  border-top-style: solid;
+  border-top-color: lightgray;
+  border-top-width: 1px;
+  margin: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+ul {
+  padding: 0px;
+}

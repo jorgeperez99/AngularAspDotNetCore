@@ -9,6 +9,8 @@ import { EFComponent } from './Components/ef/ef.component';
 import { TestingComponent } from './Components/testing/testing.component';
 import { ConfigurationComponent } from './Components/configuration/configuration.component';
 import { HttpClientComponent } from './Components/http-client/http-client.component';
+import { ControllersComponent } from './Components/controllers/controllers.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -18,20 +20,14 @@ import { HttpClientComponent } from './Components/http-client/http-client.compon
     EFComponent,
     TestingComponent,
     ConfigurationComponent,
-    HttpClientComponent
+    HttpClientComponent,
+    ControllersComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: '/routing', pathMatch: 'full' },
-      { path: 'routing', component: RoutingComponent },
-      { path: 'ef', component: EFComponent },
-      { path: 'configuration', component: ConfigurationComponent },
-      { path: 'testing', component: TestingComponent },
-      { path: 'httpclient', component: HttpClientComponent }
-    ])
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
