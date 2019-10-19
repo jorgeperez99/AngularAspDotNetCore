@@ -20,4 +20,16 @@ export class ControllersComponent implements OnInit {
       this.schools = schools;
     });
   }
+
+  getSchoolsAll() {
+    this.schoolService.getSchoolsAll().subscribe(schools => {
+      this.schools = schools;
+    });
+  }
+
+  getSchoolsError() {
+    this.schoolService.getSchoolsError().subscribe(schools => {
+      this.schools = schools;
+    });
+  }
 }

@@ -13,4 +13,13 @@ export class SchoolService {
   getSchools() {
     return this.httpClient.get<School[]>(`${this.apiURL}/school`);
   }
+
+  getSchoolsAll() {
+    return this.httpClient.get<School[]>(`${this.apiURL}/school/all`);
+  }
+
+
+  getSchoolsError() {
+    return this.httpClient.get<School[]>(`${this.apiURL}/school/error`);
+  }
 }

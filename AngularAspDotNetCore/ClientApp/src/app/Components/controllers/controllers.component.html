@@ -3,11 +3,31 @@
   controller inherits from controller.  This page talks about api.</p>
 <ul>
   <li>
-    <h2>Getting synch data</h2>
-    <p></p>
-    <div>
-
-    </div>
+    <h2>Return Values from controllers:</h2>
+    <h3>Returning Specific Types</h3>
+    <p>
+      The simplest action returns a primitive or complex
+      data type (for example, string or a custom object type). Consider
+      the following action, which returns a collection of custom Product objects:
+    </p>
     <button (click)="getSchools()">get schools</button>
+    <table *ngFor="let school of schools">
+      <tr *ngFor="let teacher of school.teachers">
+        <td>{{school.name}}</td>
+        <td>{{teacher.name}}</td>
+      </tr>
+    </table>
+    <h3>Returning IActionResult Types</h3>
+    <p>
+      The IActionResult return type is appropriate when multiple ActionResult return
+      types are possible in an action. The ActionResult types represent various HTTP
+      status codes. Any non-abstract class deriving from ActionResult qualifies as a
+      valid return type. Some common return types in this category are
+      BadRequestResult (400), NotFoundResult (404), and OkObjectResult (200).
+      Alternatively, convenience methods in the ControllerBase class can be used to
+      return ActionResult types from an action
+    </p>
+    <button (click)="getSchoolsAll()">get schools</button>
+    <button (click)="getSchoolsError()">get schools</button>
   </li>
 </ul>
