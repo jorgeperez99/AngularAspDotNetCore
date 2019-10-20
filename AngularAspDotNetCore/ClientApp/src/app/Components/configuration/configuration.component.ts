@@ -12,6 +12,7 @@ import { ConfigurationSetting } from '../../Model/ConfigurationSetting';
 })
 export class ConfigurationComponent implements OnInit {
   env = environment;
+  apiUrl: string;
   configurationSetting: ConfigurationSetting;
   constructor(private configurationService: ConfigurationService) { }
 
@@ -20,5 +21,6 @@ export class ConfigurationComponent implements OnInit {
     this.configurationService.getConfigurationSettings().subscribe(configurationSetting => {
       this.configurationSetting = configurationSetting;
     });
+    this.apiUrl = this.configurationService.apiURL;
   }
 }
