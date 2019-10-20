@@ -12,8 +12,12 @@ export class ConfigurationService {
   env = environment;
 
   constructor(private httpClient: HttpClient, private platformLocation: PlatformLocation) {
-    this.apiURL = (this.platformLocation as any).location.origin + "/" +
-      ((this.env.applicationName) ? this.env.applicationName + "/api": "api") ;
+    if (this.env.production) {
+      this.apiURL = (this.platformLocation as any).location.origin + "/" + this.env.applicationName + "/api";
+    }
+    else {
+      this.apiURL = (this.platformLocation as any).location.origin + "/api";
+    }
   }
 
   getConfigurationSettings() {
