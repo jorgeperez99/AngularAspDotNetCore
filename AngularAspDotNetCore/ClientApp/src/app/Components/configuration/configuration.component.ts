@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { ConfigurationService } from '../../Service/configuration.service';
+import { ConfigurationSetting } from '../../Model/ConfigurationSetting';
 
 
 @Component({
@@ -10,10 +12,13 @@ import { environment } from '../../../environments/environment';
 })
 export class ConfigurationComponent implements OnInit {
   env = environment;
-
-  constructor() { }
+  configurationSetting: ConfigurationSetting;
+  constructor(private configurationService: ConfigurationService) { }
 
   ngOnInit() {
+    debugger;
+    this.configurationService.getConfigurationSettings().subscribe(configurationSetting => {
+      this.configurationSetting = configurationSetting;
+    });
   }
-
 }

@@ -1,13 +1,25 @@
 <h1>Configuration</h1>
-<h2>Client Side</h2>
-<h3>Environment.ts</h3>
-<h4>Production</h4>
-<p>ng serve --configuration=production</p>
-<h4>Environment</h4>
-<p>ng serve</p>
+<ul>
+  <li>
+    <h2>Client Side</h2>
+    <h3>Environment.ts</h3>
+    <h4>Production</h4>
+    <p>ng serve --configuration=production</p>
+    <h4>Environment</h4>
+    <p>ng serve</p>
+    <pre>{{env | json}}</pre>environment production: {{env.production}}
+  </li>
+  <li>
+    <h2>Server Side</h2>
+    <h3>appsettings.json</h3>
+    Configuration Setting : {{configurationSetting?.configurationType}}
+  </li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
 
-<pre>{{env | json}}</pre>
 
-environment production: {{env.production}}
-<h2>Server Side</h2>
-<h3>appsettings.json</h3>
+
+
+
