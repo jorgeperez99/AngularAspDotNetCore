@@ -10,8 +10,7 @@ export class HttpClientComponent implements OnInit {
 
   constructor(private sampleDataService: SampleDataService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   getData() {
     this.sampleDataService.getSampleData().subscribe(data => {

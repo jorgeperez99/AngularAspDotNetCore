@@ -32,7 +32,7 @@ namespace AngularAspDotNetCore.Controllers
         }
 
         [HttpGet] // Matches '/School'
-        [Route("all")]
+        [Route("error")]
         public ActionResult<List<School>> GetError() {
             // ...
             return this.NotFound();
