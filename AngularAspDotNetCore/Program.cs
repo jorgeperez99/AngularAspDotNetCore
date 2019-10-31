@@ -14,11 +14,22 @@ namespace AngularAspDotNetCore
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("==============================================================================================");
+            Console.WriteLine("==============================================================================================");
+            Console.WriteLine("==============================================================================================");
+            Console.WriteLine("==============================================================================================");
             CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) {
+            var config = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
+            var env = config.GetValue<string>("environment");
+            Console.WriteLine("Enviroment variable is: " + env);
+            return WebHost.CreateDefaultBuilder(args)
+                .UseConfiguration(config)
                 .UseStartup<Startup>();
+        }
     }
 }

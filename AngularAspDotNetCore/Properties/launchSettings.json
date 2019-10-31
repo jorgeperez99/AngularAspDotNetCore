@@ -18,6 +18,7 @@
     },
     "AngularAspDotNetCore": {
       "commandName": "Project",
+      "commandLineArgs": "--environment \"Staging\"",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

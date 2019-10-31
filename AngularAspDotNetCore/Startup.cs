@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace AngularAspDotNetCore
 {
@@ -32,6 +33,8 @@ namespace AngularAspDotNetCore
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            Console.WriteLine("environment name: " + env.EnvironmentName);
+            Console.WriteLine("environmentType: " + this.Configuration.GetValue(typeof(string), "environmentType"));
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
