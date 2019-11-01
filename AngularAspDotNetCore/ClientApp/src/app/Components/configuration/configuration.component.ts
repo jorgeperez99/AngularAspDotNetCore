@@ -13,14 +13,19 @@ import { ConfigurationSetting } from '../../Model/ConfigurationSetting';
 export class ConfigurationComponent implements OnInit {
   env = environment;
   apiUrl: string;
-  configurationSetting: ConfigurationSetting;
+  baseUrl: string;
+  configuration: string;
   constructor(private configurationService: ConfigurationService) { }
 
   ngOnInit() {
-    debugger;
-    this.configurationService.getConfigurationSettings().subscribe(configurationSetting => {
-      this.configurationSetting = configurationSetting;
-    });
     this.apiUrl = this.configurationService.apiURL;
+    this.baseUrl = this.configurationService.getBaseUrl();
+  }
+
+  getConfiguration() {
+    this.configurationService.getConfigurationSettings().subscribe(configurationSetting => {
+      debugger;
+      this.configuration = configurationSetting.configurationType;
+    });
   }
 }

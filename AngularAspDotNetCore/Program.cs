@@ -24,6 +24,7 @@ namespace AngularAspDotNetCore
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) {
             var config = new ConfigurationBuilder()
                 .AddCommandLine(args)
+                .AddEnvironmentVariables()
                 .Build();
             var env = config.GetValue<string>("environment");
             Console.WriteLine("Enviroment variable is: " + env);

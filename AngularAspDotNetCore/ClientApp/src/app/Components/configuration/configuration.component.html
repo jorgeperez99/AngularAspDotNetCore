@@ -17,12 +17,11 @@
       1. right click on project. 2. click debug tab. 3. change environment variables.
       <a href="https://www.jerriepelser.com/tutorials/airport-explorer/basic/working-with-configuration/">here</a>
     </p>
-    Configuration Setting : {{configurationSetting?.configurationType}} <br/>
-    apiUrl: {{apiUrl}}
+    Configuration Setting : <input [(ngModel)]="configuration" /><br />
+    <button (click)="getConfiguration()">Get Configuration</button><br />
+    apiUrl: {{apiUrl}} <br/>
+    baseUrl: {{baseUrl}}
   </li>
-  <li></li>
-  <li></li>
-  <li></li>
 </ul>
 
 

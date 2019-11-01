@@ -13,14 +13,23 @@ export class ConfigurationService {
 
   constructor(private httpClient: HttpClient, private platformLocation: PlatformLocation) {
     if (this.env.production) {
-      this.apiURL = (this.platformLocation as any).location.origin + "/" + this.env.applicationName + "/api";
+      this.apiURL = this.getBaseUrl() + "/" + this.env.applicationName + "/api";
     }
     else {
-      this.apiURL = (this.platformLocation as any).location.origin + "/api";
+      this.apiURL = this.getBaseUrl() + "/api";
     }
   }
 
   getConfigurationSettings() {
     return this.httpClient.get<ConfigurationSetting>(`${this.apiURL}/Configuration`);
+  }
+
+  getBaseUrl() {
+    if (this.env.production) {
+      return (this.platformLocation as any).location.origin + "/" + this.env.applicationName;
+    }
+    else {
+      return (this.platformLocation as any).location.origin;
+    }
   }
 }
