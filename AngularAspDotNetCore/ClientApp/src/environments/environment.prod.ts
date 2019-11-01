@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  applicationName: 'AngularAspDotNetCore'
+  applicationName: 'AngularAspDotNetCore',
+  baseUrl: 'NOT USED IN PRODUCTION'
 };
