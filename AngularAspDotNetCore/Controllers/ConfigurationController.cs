@@ -19,10 +19,10 @@ namespace AngularAspDotNetCore.Controllers
         }
 
         [HttpGet]
-        public ConfigurationSetting Get() {
+        public ActionResult<ConfigurationSetting> Get() {
             var cs = new ConfigurationSetting();
             cs.ConfigurationType = configuration["environmentType"];
-            return cs;
+            return this.Ok(cs);
         }
 
     }

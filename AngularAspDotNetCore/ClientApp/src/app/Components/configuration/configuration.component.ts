@@ -18,7 +18,7 @@ export class ConfigurationComponent implements OnInit {
   constructor(private configurationService: ConfigurationService) { }
 
   ngOnInit() {
-    this.apiUrl = this.configurationService.apiURL;
+    this.apiUrl = this.configurationService.getApiUrl();
     this.baseUrl = this.configurationService.getBaseUrl();
   }
 

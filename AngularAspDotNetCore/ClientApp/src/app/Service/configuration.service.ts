@@ -8,28 +8,26 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ConfigurationService {
-  apiURL: string = 'https://localhost:5001/api';
   env = environment;
 
   constructor(private httpClient: HttpClient, private platformLocation: PlatformLocation) {
-    if (this.env.production) {
-      this.apiURL = this.getBaseUrl() + "/" + this.env.applicationName + "/api";
-    }
-    else {
-      this.apiURL = this.getBaseUrl() + "/api";
-    }
   }
 
   getConfigurationSettings() {
-    return this.httpClient.get<ConfigurationSetting>(`${this.apiURL}/Configuration`);
+    return this.httpClient.get<ConfigurationSetting>(`${this.getApiUrl()}/Configuration`);
   }
 
   getBaseUrl() {
+    debugger;
     if (this.env.production) {
       return (this.platformLocation as any).location.origin + "/" + this.env.applicationName;
     }
     else {
-      return (this.platformLocation as any).location.origin;
+      return this.env.baseUrl;
     }
+  }
+
+  getApiUrl() {
+    return this.getBaseUrl() + "/api";
   }
 }

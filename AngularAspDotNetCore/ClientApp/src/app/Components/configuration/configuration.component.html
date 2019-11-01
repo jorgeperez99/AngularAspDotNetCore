@@ -18,6 +18,9 @@
       <a href="https://www.jerriepelser.com/tutorials/airport-explorer/basic/working-with-configuration/">here</a>
     </p>
     Configuration Setting : <input [(ngModel)]="configuration" /><br />
+    <p class="note">Note: this behavior is working. the configuration is
+    fine in the server. there is an issue with parsing the json which
+    has to do with rest client. maybe not happening in angular 8.</p>
     <button (click)="getConfiguration()">Get Configuration</button><br />
     apiUrl: {{apiUrl}} <br/>
     baseUrl: {{baseUrl}}
